@@ -1,0 +1,9 @@
+http://localhost:3000/extractor?municipality=Independencia&id=846-485
+
+http://localhost:3000/extractor?municipality=Estación Central&id=638-435
+
+http://localhost:3000/extractor?municipality=Quilicura&id=604-00028
+
+http://localhost:3000/extractor?municipality=San Miguel&id=2740-453
+
+http://localhost:3000/extractor?municipality=Quinta Normal&id=1929-612
