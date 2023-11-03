@@ -106,26 +106,26 @@ export async function aseo_ecom(municipality,rol,dv){
   }) 
 
   await page.close()
-  if (total > 0) {
-    return {data:{
+  if (total >= 0) {
+    return {data:[{
       id:rol+'-'+dv,
       measurement_date:fechaFormateada,
       invoice_amount: total,
-    }};
+    }]};
   } else {
-    return {data:{
+    return {data:[{
       id:rol+'-'+dv,
       measurement_date:fechaFormateada,
       invoice_amount: "Sin deuda/No registrado",
-    }};
+    }]};
   }
 
   } catch (error){
-    return {data:{
+    return {data:[{
       id:rol+'-'+dv,
       measurement_date:fechaFormateada,
       invoice_amount: "Sin deuda/No registrado",
-    }};
+    }]};
   }
 
 }
