@@ -31,7 +31,7 @@ export async function aseo_ecom(municipality,rol,dv){
   let xpath_num=0
 
   // Municipality case
-  if(municipality=="estacion central"){
+  if(municipality=="estacion-central"){
     url='https://ww3.e-com.cl/Pagos/DerechodeAseo/onlinev3/inicio.asp?codmunic=37'
     url_cookie1='https://ww3.e-com.cl/Pagos/DerechodeAseo/onlinev3/detalle_aseo.asp'
     url_cookie2='https://ww3.e-com.cl/Pagos/DerechodeAseo/onlinev3/inicio.asp?codmunic=37'
@@ -46,12 +46,12 @@ export async function aseo_ecom(municipality,rol,dv){
     url_cookie1='https://ww2.e-com.cl/Pagos/DerechodeAseo/onlinev4/detalle_aseo.asp'
     url_cookie2='https://ww2.e-com.cl/Pagos/DerechodeAseo/onlinev4/inicio.asp?codmunic=28'
   }
-  else if(municipality=="san miguel"){
+  else if(municipality=="san-miguel"){
     url='https://ww6.e-com.cl/Pagos/DerechodeAseo/onlinev4/inicio.asp?codMunic=47'
     url_cookie1='https://ww6.e-com.cl/Pagos/DerechodeAseo/onlinev4/detalle_aseo.asp'
     url_cookie2='https://ww6.e-com.cl/Pagos/DerechodeAseo/onlinev4/inicio.asp?codMunic=47'
   }
-  else if(municipality=="quinta normal"){
+  else if(municipality=="quinta-normal"){
     url='https://ww6.e-com.cl/Pagos/DerechodeAseo/onlinev3/inicio.asp?codMunic=4'
     url_cookie1='https://ww6.e-com.cl/Pagos/DerechodeAseo/onlinev4/detalle_aseo.asp'
     url_cookie2='https://ww6.e-com.cl/Pagos/DerechodeAseo/onlinev4/inicio.asp?codmunic=4'

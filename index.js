@@ -23,11 +23,11 @@ app.get("/extractor",query("id").notEmpty(),query("municipality").notEmpty(),
       const total = await aseo_ecom(municipality,rol, dv);
       const {invoice_amount }= total.data
       if (invoice_amount == "Error al cargar página"){
-        res.status(500).send(JSON.stringify(total))
+        res.status(500).json(total)
       }else if(invoice_amount=="Municipalidad no válida") {
-        res.status(400).send(JSON.stringify(total))
+        res.status(400).json(total)
       }else {
-        res.status(200).send(JSON.stringify(total));
+        res.status(200).json(total);
       }
     } else {
       return res.status(400).send({ id: "Falta rol o municipalidad" });
