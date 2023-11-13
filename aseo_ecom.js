@@ -3,17 +3,6 @@ import axios from 'axios'
 import * as cheerio from "cheerio";
 
 export async function aseo_ecom(municipality,rol,dv){
-  // measurement_date info
-  const fechaActual = new Date();
-
-  const dia = fechaActual.getDate();
-  const mes = fechaActual.getMonth() + 1;
-  const año = fechaActual.getFullYear();
-  const hora = fechaActual.getHours();
-  const minutos = fechaActual.getMinutes();
-  const segundos = fechaActual.getSeconds();
-
-  const fechaFormateada = `${año}-${mes}-${dia} ${hora}:${minutos}:${segundos}`;
 
   // Puppeteer
   try{
@@ -39,7 +28,6 @@ export async function aseo_ecom(municipality,rol,dv){
   let url= 0
   let url_cookie1=0
   let url_cookie2=0
-  let xpath_num=0
 
   // Municipality case
   if(municipality=="estacion-central"){
@@ -118,25 +106,19 @@ export async function aseo_ecom(municipality,rol,dv){
 
   await page.close()
   if (total >= 0) {
-    return {data:[{
-      id:rol+'-'+dv,
-      measurement_date:fechaFormateada,
+    return {data:{
       invoice_amount: total,
-    }]};
+    }};
   } else {
-    return {data:[{
-      id:rol+'-'+dv,
-      measurement_date:fechaFormateada,
+    return {data:{
       invoice_amount: "Sin deuda/No registrado",
-    }]};
+    }};
   }
 
   } catch (error){
-    return {data:[{
-      id:rol+'-'+dv,
-      measurement_date:fechaFormateada,
+    return {data:{
       invoice_amount: "Sin deuda/No registrado",
-    }]};
+    }};
   }
 
 }
